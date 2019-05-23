@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
         if(res.data.code === '200'){
           const texmode = "登录成功";
           this.alert.presentToast(texmode);
-          // this.router.navigate( ['/tab1'] );
+          this.router.navigate( ['/app/tabs/tab1'] );
         }
       }).catch((err)=>{
         console.log(err)
