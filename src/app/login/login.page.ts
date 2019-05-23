@@ -64,6 +64,8 @@ export class LoginPage implements OnInit {
         if(res.data.code === '200'){
           const texmode = "登录成功";
           this.alert.presentToast(texmode);
+          // 将数据存在storage
+          this.storage.set("user",res.data.data)
           this.router.navigate( ['/app/tabs/tab1'] );
         }
       }).catch((err)=>{

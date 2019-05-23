@@ -200,8 +200,9 @@ export class AlertmodeService {
   async presentToast(texmode) {
     const toast = await this.tost.create({
       message: texmode,
-      position: 'bottom',
-      duration: 2000,
+      position: 'top',
+      duration: 1000,
+      cssClass: "tostlodin"
     });
     toast.present();
   }
