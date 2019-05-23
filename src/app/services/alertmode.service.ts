@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController,ToastController } from '@ionic/angular';
 @Injectable({
   providedIn: 'root'
 })
 export class AlertmodeService {
+  // presentToast(texmode: string) {
+  //   throw new Error("Method not implemented.");
+  // }
   text:any = "";
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController,public tost:ToastController) { }
   // 提示信息
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -192,6 +195,39 @@ export class AlertmodeService {
     });
 
     await alert.present();
+  }
+  // Tost
+  async presentToast(texmode) {
+    const toast = await this.tost.create({
+      message: texmode,
+      position: 'bottom',
+      duration: 2000,
+    });
+    toast.present();
+  }
+  async presentToastWithOptions(texmode) {
+    const toast = await this.tost.create({
+      header: 'Toast header',
+      message: texmode,
+      position: 'top',
+      buttons: [
+        {
+          side: 'start',
+          icon: 'star',
+          text: 'Favorite',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }, {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    toast.present();
   }
 
 }
