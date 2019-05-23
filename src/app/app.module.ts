@@ -9,7 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 // 引入根组件
 import { AppComponent } from './app.component';
-
+// 引入frommodul 双相绑定
+import { FormsModule } from '@angular/forms';
+// 引入服务
+import { BesurlService } from './services/besurl.service';
+import { StorageService } from './services/storage.service';
 @NgModule({
   declarations: [AppComponent], /*引入根组件 */
   entryComponents: [], // 配置不会在模版中使用的组件
@@ -18,6 +22,9 @@ import { AppComponent } from './app.component';
   providers: [ //配置服务
     StatusBar,
     SplashScreen,
+    BesurlService,
+    StorageService,
+    FormsModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

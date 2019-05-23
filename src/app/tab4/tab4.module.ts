@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-import { LoginPage } from './login.page';
+
+import { Tab4Page } from './tab4.page';
+
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage,
+    component: Tab4Page
   }
 ];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,11 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [
-    LoginPage,
-  ],
-  exports:[
-    LoginPage,
-  ],
+  declarations: [Tab4Page]
 })
-export class LoginPageModule {}
+export class Tab4PageModule {}
