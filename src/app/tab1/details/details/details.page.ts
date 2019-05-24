@@ -30,7 +30,6 @@ export class DetailsPage implements OnInit {
         imgurl:"assets/123.png"
       }
     ];
-    holdeta: any =[];
   constructor(public besurl:BesurlService,
     public route: ActivatedRoute,) { }
 
@@ -52,8 +51,12 @@ export class DetailsPage implements OnInit {
       Axios.get(api,date).then((res)=>{
         console.log(res)
         this.detaslist=res.data.data;
-        var holdeta = JSON.parse(res.data.data.mealWheel);
-        console.log(holdeta)
+        // 字符串截取
+        // const str=res.data.data.mealWheel;
+        // console.log("原字符串:",str)
+        // this.list=str.split(',')
+        // console.log("转成的数组:",this.list)
+
       }).catch((err)=>{
         console.log(err)
       })
