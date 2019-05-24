@@ -9,7 +9,28 @@ import Axios from 'axios';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  detailsId: any = '';
+    detailsId: any = '';
+    detaslist: any =[];
+    // 给子组件传值
+    list: any=[
+      {
+        id:0,
+        imgurl:"assets/slide03.gif"
+      },
+      {
+        id:1,
+        imgurl:"assets/slide01.png"
+      },
+      {
+        id:2,
+        imgurl:"assets/slide02.jpg"
+      },
+      {
+        id:2,
+        imgurl:"assets/123.png"
+      }
+    ];
+    holdeta: any =[];
   constructor(public besurl:BesurlService,
     public route: ActivatedRoute,) { }
 
@@ -30,6 +51,9 @@ export class DetailsPage implements OnInit {
       }
       Axios.get(api,date).then((res)=>{
         console.log(res)
+        this.detaslist=res.data.data;
+        var holdeta = JSON.parse(res.data.data.mealWheel);
+        console.log(holdeta)
       }).catch((err)=>{
         console.log(err)
       })
