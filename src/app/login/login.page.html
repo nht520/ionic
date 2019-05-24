@@ -10,11 +10,17 @@
             <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
         </ion-item>
     </ion-card-header>
-    
     <ion-card-content class="loginbt">
        <ion-button (click)="btserves()" color="primary">登录</ion-button>
+        <!-- 注册 -->
+        <p [routerLink]="[ '/register' ]">立即注册</p>
     </ion-card-content>
-
+    <!-- <ion-grid>
+        <ion-row>
+            <ion-col>11111</ion-col>
+            <ion-col>11111</ion-col>
+        </ion-row>
+    </ion-grid> -->
     <!-- <ion-button [routerLink]="[ '/app/tabs/tab1' ]" >跳转</ion-button> -->
       
 </ion-content>

@@ -57,8 +57,8 @@ export class LoginPage implements OnInit {
       this.alert.presentToast(texmode);
     } else {
       const date = new URLSearchParams();
-      date.append("memberPhone",this.username);
-      date.append("memberPassword",this.userpassword);
+            date.append("memberPhone",this.username);
+            date.append("memberPassword",this.userpassword);
       Axios.post(api,date).then((res)=>{
         console.log(res)
         if(res.data.code === '200'){

@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { BesurlService } from './services/besurl.service';
 import { StorageService } from './services/storage.service';
 import { AlertmodeService } from './services/alertmode.service';
+import { LoddingService } from './services/lodding.service';
+// 打包空白需要LocationStrategy, HashLocationStrategy 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [AppComponent], /*引入根组件 */
@@ -28,6 +30,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     StorageService,
     FormsModule,
     AlertmodeService,
+    LoddingService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],

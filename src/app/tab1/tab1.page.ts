@@ -11,7 +11,7 @@ export class Tab1Page {
   list: any=[
     {
       id:0,
-      imgurl:"assets/slide02.jpg"
+      imgurl:"assets/slide03.gif"
     },
     {
       id:1,
@@ -19,7 +19,11 @@ export class Tab1Page {
     },
     {
       id:2,
-      imgurl:"assets/slide03.gif"
+      imgurl:"assets/slide02.jpg"
+    },
+    {
+      id:2,
+      imgurl:"assets/123.png"
     }
   ];
   text: any= "是否确认删除？"
