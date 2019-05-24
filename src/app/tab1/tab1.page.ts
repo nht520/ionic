@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
 import { StorageService } from '../services/storage.service';
+import { BesurlService } from '../services/besurl.service';
+import Axios from 'axios';
 @Component({ 
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  homelist: any = [];
   // 给子组件传值
   list: any=[
     {
@@ -30,10 +33,12 @@ export class Tab1Page {
   // 给子组件传第方法
   sbmtButton: any ="presentAlertConfirm";
 
-  constructor(public storage:StorageService,public router:Router,) { }
+  constructor(public storage:StorageService,public besurl:BesurlService,
+    public router:Router,) { }
 
   ngOnInit() {
-    this.username()
+    this.username();
+    this.meal();
   }
   username(){
     // 判断用户是否登录
@@ -44,5 +49,15 @@ export class Tab1Page {
     }else{
       this.router.navigate( ['/app/tabs/tab1'] );
     }
+  }
+  meal(){
+    const api = this.besurl.window.meal;
+    Axios.get(api).then((res)=>{
+      console.log(res)
+      this.homelist = res.data.records;
+    }).catch((err)=>{
+      console.log(err)
+    })
+
   }
 }
