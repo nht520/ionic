@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { BesurlService } from './services/besurl.service';
 import { StorageService } from './services/storage.service';
 import { AlertmodeService } from './services/alertmode.service';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [AppComponent], /*引入根组件 */
   entryComponents: [], // 配置不会在模版中使用的组件
@@ -27,7 +28,8 @@ import { AlertmodeService } from './services/alertmode.service';
     StorageService,
     FormsModule,
     AlertmodeService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
