@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {}
+export class TabsPage {
+  flag = 'home';
+  change(event) {
+      this.flag=event.detail.tab;
+  }
+
+}
+
