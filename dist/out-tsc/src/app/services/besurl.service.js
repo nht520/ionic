@@ -18,7 +18,33 @@ var BesurlService = /** @class */ (function () {
             stock: this.api + '/distributor/stock',
             //  套餐
             meal: this.api + "/distributor/meal",
-            mealDts: this.api + "/distributor/meal/findById?",
+            mealDts: this.api + "/distributor/meal/findById",
+            //自己发货订单
+            indent: this.api + "/distributor/order",
+            update: this.api + "/distributor/order/update",
+            //后台发货订单
+            deliver: this.api + "/distributor/order/deliver",
+            //分销订单
+            subordinate: this.api + "/distributor/subordinate",
+            //  经销商用户
+            distname: this.api + "/distributor/member",
+            //地址
+            // 省
+            getProvince: this.api + "/distributor/systemAddress/getProvince",
+            //市province
+            getCity: this.api + "/distributor/systemAddress/getCity",
+            //区city
+            getCounty: this.api + "/distributor/systemAddress/getCounty",
+            //添加地址
+            addressadd: this.api + "/distributor/address",
+            //  查询地址邮费
+            findCost: this.api + "/distributor/addressCost",
+            //  修改地址邮费
+            delupdate: this.api + "/distributor/addressCost/update",
+            //  修改地址
+            adsupdate: this.api + "/distributor/address/update",
+            //查询所有会员
+            hopMember: this.api + "/distributor/shopMember"
         };
     }
     BesurlService.prototype.get = function () {

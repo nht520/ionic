@@ -264,14 +264,16 @@ var AlertmodeService = /** @class */ (function () {
         });
     };
     // Tost
-    AlertmodeService.prototype.presentToast = function () {
+    AlertmodeService.prototype.presentToast = function (texmode) {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var toast;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.tost.create({
-                            message: 'Your settings have been saved.',
-                            duration: 2000
+                            message: texmode,
+                            position: 'top',
+                            duration: 1000,
+                            cssClass: "tostlodin"
                         })];
                     case 1:
                         toast = _a.sent();
@@ -281,14 +283,14 @@ var AlertmodeService = /** @class */ (function () {
             });
         });
     };
-    AlertmodeService.prototype.presentToastWithOptions = function () {
+    AlertmodeService.prototype.presentToastWithOptions = function (texmode) {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var toast;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.tost.create({
                             header: 'Toast header',
-                            message: 'Click to Close',
+                            message: texmode,
                             position: 'top',
                             buttons: [
                                 {

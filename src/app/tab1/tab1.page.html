@@ -16,9 +16,9 @@
                     *ngFor="let item of homelist;"
                     [routerLink]="[ '/details',item.id]"
                     >
-            <img src="{{item.mealImage}}" alt="">
-            <h6>{{item.mealName}}</h6>
-            <p>{{item.mealContent}}</p>
+            <img src="assets/slide03.gif"/>
+            <h6  ng-cloak>{{item.mealName}}</h6>
+            <p  ng-cloak>{{item.mealContent}}</p>
           </ion-col>
         </ion-row>
     </ion-grid>

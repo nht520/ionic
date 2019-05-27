@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { BesurlService } from './services/besurl.service';
 import { StorageService } from './services/storage.service';
 import { AlertmodeService } from './services/alertmode.service';
+import { LoddingService } from './services/lodding.service';
+// 打包空白需要LocationStrategy, HashLocationStrategy 
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -33,7 +36,9 @@ var AppModule = /** @class */ (function () {
                 StorageService,
                 FormsModule,
                 AlertmodeService,
-                { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+                LoddingService,
+                { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+                { provide: LocationStrategy, useClass: HashLocationStrategy }
             ],
             bootstrap: [AppComponent]
         })

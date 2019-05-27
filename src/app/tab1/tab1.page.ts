@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router} from '@angular/router';
 import { StorageService } from '../services/storage.service';
 import { BesurlService } from '../services/besurl.service';
+import { LoddingService } from '../services/lodding.service';
 import Axios from 'axios';
 @Component({ 
   selector: 'app-tab1',
@@ -33,7 +34,8 @@ export class Tab1Page {
   // 给子组件传第方法
   sbmtButton: any ="presentAlertConfirm";
 
-  constructor(public storage:StorageService,public besurl:BesurlService,
+  constructor(public storage:StorageService, public lodding:LoddingService,
+    public besurl:BesurlService,
     public router:Router,) { }
 
   ngOnInit() {
@@ -50,10 +52,12 @@ export class Tab1Page {
       this.router.navigate( ['/app/tabs/tab1'] );
     }
   }
+  // 套餐列表
   meal(){
     const api = this.besurl.window.meal;
     Axios.get(api).then((res)=>{
       console.log(res)
+      this.lodding.presentLoading();
       this.homelist = res.data.records;
     }).catch((err)=>{
       console.log(err)

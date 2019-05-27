@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule'  },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'details/:aid', loadChildren: './tab1/details/details/details.module#DetailsPageModule' },
+  { path: 'ordetils/:aid', loadChildren: './tab2/ordetils/ordetils.module#OrdetilsPageModule' },
+
 
 
 ];
