@@ -6,6 +6,7 @@ import { LoadingController } from '@ionic/angular';
 export class LoddingService {
 
   constructor(public loadingController: LoadingController) { }
+  
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'lodding',

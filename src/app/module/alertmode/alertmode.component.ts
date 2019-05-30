@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+// 获取负组件的方法
+import { Component, OnInit, Input } from '@angular/core';
 import { AlertController,ToastController } from '@ionic/angular';
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-alertmode',
+  templateUrl: './alertmode.component.html',
+  styleUrls: ['./alertmode.component.scss'],
 })
-export class AlertmodeService {
-  // presentToast(texmode: string) {
-  //   throw new Error("Method not implemented.");
-  // }
+export class AlertmodeComponent implements OnInit {
+  // 获取负组件的方法
+  @ Input() affirm: any;
   text:any = "";
   constructor(public alertController: AlertController,public tost:ToastController) { }
+  ngOnInit() {}
   // 提示信息
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -47,6 +50,7 @@ export class AlertmodeService {
           text: '确认',
           handler: () => {
             console.log('Confirm Okay');
+            this.affirm();
           }
         }
       ]

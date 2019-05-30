@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
+// 引用storage 服务
 import { StorageService } from '../services/storage.service';
+// 引用besurl 服务
 import { BesurlService } from '../services/besurl.service';
+// 引用lodding 服务
 import { LoddingService } from '../services/lodding.service';
 import Axios from 'axios';
 @Component({ 
@@ -35,8 +38,7 @@ export class Tab1Page {
   sbmtButton: any ="presentAlertConfirm";
 
   constructor(public storage:StorageService, public lodding:LoddingService,
-    public besurl:BesurlService,
-    public router:Router,) { }
+    public besurl:BesurlService, public router:Router,) { }
 
   ngOnInit() {
     this.username();

@@ -15,6 +15,8 @@
         <!-- 注册 -->
         <p [routerLink]="[ '/register' ]">立即注册</p>
     </ion-card-content>
+    <!-- 提示组件 -->
+    <app-alertmode #tost [affirm]= "affirm" ></app-alertmode>
     <!-- <ion-grid>
         <ion-row>
             <ion-col>11111</ion-col>
@@ -22,6 +24,23 @@
         </ion-row>
     </ion-grid> -->
     <!-- <ion-button [routerLink]="[ '/app/tabs/tab1' ]" >跳转</ion-button> -->
-      
 </ion-content>
 
+<!-- 发果是引用服务，则直接在 login.page.ts里面引用
+    1.import { BesurlService } from '../services/besurl.service';
+    2.public besurl:BesurlService,
+    3.this.besurl... 调用方法和数据
+-->
+<!-- 如果是引用组件，则需要在login.module 里面引用 
+    一.首页把组件模块暴露出来，让其他组件可以引用
+        1.import { AlertmodeComponent } from '../alertmode/alertmode.component';
+        2. declarations: [AlertmodeComponent],
+        3. exports:[AlertmodeComponent] 暴露模块
+    二.在login.module 里面引用 alert模块
+     1.import { AlertmodeModule } from '../module/alertmode/alertmode.module'
+     2.imports: [
+       AlertmodeModule,
+       RouterModule.forChild(routes) ],
+    3. <app-alertmode #tost [affirm]= "affirm" ></app-alertmode>
+
+ -->

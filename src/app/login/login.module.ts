@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './login.page';
+import { AlertmodeModule } from '../module/alertmode/alertmode.module'
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +17,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    AlertmodeModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
