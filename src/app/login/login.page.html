@@ -26,7 +26,7 @@
     <!-- <ion-button [routerLink]="[ '/app/tabs/tab1' ]" >跳转</ion-button> -->
 </ion-content>
 
-<!-- 发果是引用服务，则直接在 login.page.ts里面引用
+<!-- 如果是引用服务，首先创建 然后直接在 login.page.ts里面引用
     1.import { BesurlService } from '../services/besurl.service';
     2.public besurl:BesurlService,
     3.this.besurl... 调用方法和数据

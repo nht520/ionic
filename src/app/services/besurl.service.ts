@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BesurlService {
-  api = 'http://wx.bomao.xyz:8080/distributor';
+  api: any = 'http://wx.bomao.xyz:8080/distributor';
   // api:string = 'http://wx.bomao.xyz:8181/distributor';
   mealDts: any;
   constructor() { }
