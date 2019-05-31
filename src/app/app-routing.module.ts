@@ -6,6 +6,7 @@ const routes: Routes = [
     path: '', 
     loadChildren: './login/login.module#LoginPageModule'
    },
+  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'tab1', loadChildren: './tab1/tab1.module#Tab1PageModule' },
   { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule'  },

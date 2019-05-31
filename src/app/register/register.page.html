@@ -20,12 +20,6 @@
             </ion-col>
             <ion-col size="12">
                 <ion-item>
-                    <ion-label position="floating">请输入账号</ion-label>
-                    <ion-input [(ngModel)]="username"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col size="12">
-                <ion-item>
                     <ion-label position="floating">请输入密码</ion-label>
                     <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
                 </ion-item>
@@ -37,9 +31,12 @@
                 </ion-item>
             </ion-col>
         </ion-row>
+        <!-- 注册 -->
+        <ion-button (click)="register()" color="primary">注册</ion-button>
     </ion-grid>
     </ion-card-content>
-
+    <!-- 提示 -->
+    <app-alertmode #reginit ></app-alertmode>
     <!-- <ion-card-content class="loginbt">
        <ion-button (click)="btserves()" color="primary">注册</ion-button>
         <p [routerLink]="[ '' ]">返回登录</p>
