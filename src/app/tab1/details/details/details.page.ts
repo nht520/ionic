@@ -9,6 +9,8 @@ import Axios from 'axios';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+    headtext: any ="返回";
+    headtitle: any= "详情";
     detailsId: any = '';
     detaslist: any =[];
     // 给子组件传值

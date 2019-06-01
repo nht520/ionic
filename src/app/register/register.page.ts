@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
   username:any="";
   userpassword:any="";
+  // 向子组件传值
+  headtext:any="返回";
+  headtitle:any="注册";
   @ViewChild ('reginit') tost:any;
   constructor( public besurl:BesurlService,public router:Router,) { }
 
@@ -37,3 +40,4 @@ export class RegisterPage implements OnInit {
   }
 
 }
+

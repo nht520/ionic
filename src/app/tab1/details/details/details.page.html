@@ -1,10 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-back-button></ion-back-button>
-    <ion-title>details</ion-title>
-  </ion-toolbar>
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-back-button
+            [text]="headtext"
+            [icon]="buttonIcon">
+            </ion-back-button>
+        <ion-title>{{headtitle}}</ion-title>
+    </ion-toolbar>
 </ion-header>
-
+<!--  -->
 <ion-content>
     <ion-content>
         <!-- <video width="100%" muted autoplay="autoplay" height="240" controls> -->

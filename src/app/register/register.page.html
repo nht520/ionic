@@ -1,10 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-back-button></ion-back-button>
-    <ion-title>注册</ion-title>
-  </ion-toolbar>
+<!-- 头部组件 -->
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-back-button
+            [text]="headtext"
+            [icon]="buttonIcon">
+            </ion-back-button>
+        <ion-title>{{headtitle}}</ion-title>
+    </ion-toolbar>
 </ion-header>
-
+<!-- 内容区域 -->
 <ion-content  class="register">
     <ion-card-content>
       <ion-grid>
@@ -26,13 +30,13 @@
             </ion-col>
             <ion-col size="12">
                 <ion-item>
-                    <ion-label position="floating">请输入密码</ion-label>
+                    <ion-label position="floating">请确认密码</ion-label>
                     <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
         <!-- 注册 -->
-        <ion-button (click)="register()" color="primary">注册</ion-button>
+        <ion-button class="regiscls" (click)="register()" color="primary">注册</ion-button>
     </ion-grid>
     </ion-card-content>
     <!-- 提示 -->
