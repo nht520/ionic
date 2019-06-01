@@ -5,5 +5,36 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content></ion-content>
+<!--  -->
+<ion-content>
+<!-- Default Segment -->
+  <ion-segment (ionChange)="segmentChanged($event)" class="tabmet" color="primary" mode="ios" scrollable="true">
+      <ion-segment-button  checked
+      *ngFor="let item of newslist, let key=index" 
+      :value="{{item}}"
+      >
+        <ion-label>{{item}}</ion-label>
+      </ion-segment-button>
+  </ion-segment>
+  <!-- 新闻 -->
+  <ion-card>
+    <ion-row class="newslist">
+      <ion-col size="12">
+          <img src="assets/slide01.png"/>
+          <!-- <img src="{{v.mealEntity.mealImage}}"/> -->
+      </ion-col>
+      <ion-card-content>
+          <ion-col size="12">
+              <ion-row>
+                  <ion-col size="12">
+                      天当棉袄，地当床
+                  </ion-col>
+                  <ion-col size="12">
+                      趣味种，人已散，情未了，线已断,词在美，终究是曲！
+                  </ion-col>       
+              </ion-row>
+        </ion-col> 
+      </ion-card-content>
+    </ion-row>
+  </ion-card>
+</ion-content>

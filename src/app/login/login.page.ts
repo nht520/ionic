@@ -27,8 +27,18 @@ export class LoginPage implements OnInit {
      public router:Router, public besurl:BesurlService,
       public storage:StorageService) { }
   ngOnInit() {
-
+    this.userLogin();
   }
+  // 判断用户是否登录
+  userLogin(){
+      console.log("8888888");
+      const username = this.storage.get("user");
+      if(username === "" || username=== undefined || username === null){
+        this.router.navigate([''])
+      }else{
+        this.router.navigate(['/app/tabs/tab1'])
+      }
+    }
   // js跳转
   logrout(){
     this.router.navigate( ['/tab1'] );

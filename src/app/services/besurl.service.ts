@@ -13,6 +13,8 @@ export class BesurlService {
     findById:this.api+"/distributor/member/findById",
     register:this.api+'/distributor/member/updatePass',
     mcMembers:this.api+'/distributor/mcMembers/findById',
+    // 新闻分类
+    newscls:"http://v.juhe.cn/toutiao/index?type=top&key=d86625d0b6249d245a07e40b0e543123",
     //我的库存
     getBoxNum:this.api+"/distributor/stock/getBoxNum",
     //订货订单
