@@ -26,6 +26,7 @@ export class Tab3Page {
       console.log(err)
     })
   }
+  // 获取点击的值
   segmentChanged(e){
     console.log(e.detail.value);
   }
